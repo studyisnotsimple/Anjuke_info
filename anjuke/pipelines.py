@@ -15,7 +15,7 @@ from .items import AnjukeItemErshoufangInfo, AnjukeItemChuzuInfo, AnjukeItemXiao
 class AnjukePipeline(object):
 
     def __init__(self, mongo_url, mongo_db):
-        self.mongo_uri = mongo_url
+        self.mongo_url = mongo_url
         self.mongo_db = mongo_db
         self.client = None
         self.db = None
@@ -23,7 +23,7 @@ class AnjukePipeline(object):
     @classmethod
     def from_crawler(cls, crawler):
         return cls(
-            mongo_uri=crawler.settings.get('MONGODB_URI'),   # 提取出了mongodb配置
+            mongo_url=crawler.settings.get('MONGODB_URI'),   # 提取出了mongodb配置
             mongo_db=settings.get('MONGODB_DATABASE', 'items')
         )
 
