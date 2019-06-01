@@ -23,7 +23,7 @@ class AnjukePipeline(object):
     @classmethod
     def from_crawler(cls, crawler):
         return cls(
-            mongo_url=crawler.settings.get('MONGODB_URI'),   # 提取出了mongodb配置
+            mongo_url=crawler.settings.get('MONGODB_URL'),   # 提取出了mongodb配置
             mongo_db=settings.get('MONGODB_DATABASE', 'items')
         )
 
